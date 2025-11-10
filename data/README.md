@@ -5,5 +5,4 @@ Ezeket **helyben** kell a `data/` mappába helyezni, az alábbi elérési neveke
 - `geneo3_nodes.xlsx`
 - `rokonsag_matrix.csv`
 
-A kód ezekre a fájlokra hivatkozik, de a `.gitignore` miatt nem kerülnek feltöltésre a GitHubra.
 
