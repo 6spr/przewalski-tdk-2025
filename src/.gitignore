@@ -1,1 +1,33 @@
+# --- ADATOK ---
+data/*.csv
+data/*.xlsx
+data/*.xls
+data/*.txt
+data/*.sav
+data/*.json
+data/*.zip
 
+# --- IDEIGLENES ÉS FUTTATÁSI FÁJLOK ---
+results/*.csv
+results/*.png
+results/*.txt
+
+# --- PYTHON STANDARD IGNORES ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# --- NOTEBOOK MENTÉSEK ---
+*.ipynb_checkpoints
+
+# --- IDEK, EDITOROK ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- ENVIRONMENT ---
+.env
+.venv/
+venv/
