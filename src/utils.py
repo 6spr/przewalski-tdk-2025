@@ -1,3 +1,10 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+from matplotlib.ticker import FuncFormatter
+
+
 def rokonsagkeres(him1, him2, rokonsag):
     """Kikeresi két egyed rokonsági értékét a régi mátrixból."""
     him1 = him1.split('_')[1] if '_' in him1 else him1
