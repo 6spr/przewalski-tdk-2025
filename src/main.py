@@ -15,8 +15,6 @@ from pedigree_builder import build_pedigree_and_kinship
 # 1. ADATOK BETÖLTÉSE
 # --------------------------------------------------------
 print("🔹 Adatok betöltése...")
-# Fontos: ide NE írd a privát elérési utat, csak a data mappát használd
-# Az igazi adatot nem osztod meg, csak helyileg tartod
 egyeni_adatok = pd.read_excel("../data/geneo3_nodes.xlsx")
 
 # --------------------------------------------------------
@@ -66,7 +64,7 @@ uj_ell_r, regi_ell_r, z = uj_ell_sz[idx], regi_ell_sz[idx], z[idx]
 
 of_regiuj = np.polyfit(regi_ell_r, uj_ell_r, 1)
 r, p_value = pearsonr(regi_ell_r, uj_ell_r)
-print(f"📈 Pearson-korreláció: r = {r:.3f}, p = {p_value:.4f}")
+print(f"Pearson-korreláció: r = {r:.3f}, p = {p_value:.4f}")
 print(f"Lineáris regresszió: y = {of_regiuj[0]:.3f}x + {of_regiuj[1]:.3f}")
 
 # --------------------------------------------------------
@@ -96,5 +94,5 @@ plt.tight_layout()
 plt.savefig("../results/regression_plot.png", dpi=300)
 plt.show()
 
-print("✅ Lefutott a fő szkript.")
+print("Lefutott a fő szkript.")
 
