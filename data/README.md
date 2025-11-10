@@ -5,4 +5,4 @@ Ezeket **helyben** kell a `data/` mappába helyezni, az alábbi elérési neveke
 - `geneo3_nodes.xlsx`
 - `rokonsag_matrix.csv`
 
-
+Adatok formai követelményei még kellek!!!
