@@ -1,12 +1,16 @@
 # src/main.py
 
+import os
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
-from matplotlib.ticker import FuncFormatter
 from scipy.stats import pearsonr, gaussian_kde
 import itertools
+
+# Hozzáadjuk a src mappát az importútvonalhoz (hogy a többi fájl elérhető legyen)
+sys.path.append(os.path.dirname(__file__))
 
 from utils import rokonsagkeres, rokonsagkeres_uj, formatter
 from pedigree_builder import build_pedigree_and_kinship
@@ -15,8 +19,8 @@ from pedigree_builder import build_pedigree_and_kinship
 # 1. ADATOK BETÖLTÉSE
 # --------------------------------------------------------
 print("🔹 Adatok betöltése...")
-egyeni_adatok = pd.read_excel("../data/geneo3_nodes.xlsx")
-
+data_path = os.path.join(os.path.dirname(__file__), "../data/geneo3_nodes.xlsx")
+egyeni_adatok = pd.read_excel(data_path)
 # --------------------------------------------------------
 # 2. PEDIGRÉ ÉS ROKONSÁGI MÁTRIX KÉSZÍTÉSE
 # --------------------------------------------------------
@@ -25,8 +29,10 @@ print("🔹 Pedigré és rokonsági mátrix készítése PyAGH segítségével..
 A, coef_kinship, kin_matrix, kin_id = build_pedigree_and_kinship(egyeni_adatok)
 
 # Eredmények mentése
-kin_matrix.to_csv("../results/Kin_matrix.csv", index=False)
-kin_id.to_csv("../results/Kin_id_for_matrix.csv", index=False)
+results_dir = os.path.join(os.path.dirname(__file__), "../results")
+os.makedirs(results_dir, exist_ok=True)
+kin_matrix.to_csv(os.path.join(results_dir, "Kin_matrix.csv"), index=False)
+kin_id.to_csv(os.path.join(results_dir, "Kin_id_for_matrix.csv"), index=False)
 
 # --------------------------------------------------------
 # 3. RÉGI ÉS ÚJ ROKONSÁGOK ÖSSZEHASONLÍTÁSA
@@ -34,7 +40,9 @@ kin_id.to_csv("../results/Kin_id_for_matrix.csv", index=False)
 print("🔹 Rokonsági értékek összehasonlítása...")
 
 # Rokonsági mátrixok betöltése
-rokonsag = pd.read_csv("../data/rokonsag_matrix.csv")  # csak példanév
+rokonsag_path = os.path.join(os.path.dirname(__file__), "../data/kinship_together.xlsx")
+rokonsag = pd.read_excel(rokonsag_path)
+
 matrix = kin_matrix
 name_df = kin_id
 
