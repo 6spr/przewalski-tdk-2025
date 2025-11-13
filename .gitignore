@@ -8,8 +8,6 @@ data/*.json
 data/*.zip
 
 # --- IDEIGLENES ÉS FUTTATÁSI FÁJLOK ---
-results/*.csv
-results/*.png
 results/*.txt
 
 # --- PYTHON STANDARD IGNORES ---
