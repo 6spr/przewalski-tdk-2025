@@ -6,4 +6,4 @@ Kódfájlok és elemzések a 2025ös ELTE BTDK dolgozathoz.
 | [`data/`](./data) | Befejezetlen dummy adatok vannak ugyanis az eredeti adathalmazt nincs jogom terjeszteni |
 | [`results/`](./results) | Elemzések eredményei adatvizualizációs módszerekkel |
 | [`src/`](./src) | Kódok amiket az elemzéskor használtam |
-| [`paper/`](./paper) | kész TDK munka dokumentuma  |
+| [`TDK_document.pdf`](./TDK_document.pdf) | kész TDK munka dokumentuma  |
