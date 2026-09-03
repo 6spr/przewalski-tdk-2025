@@ -1,8 +1,5 @@
 # przewalski-tdk-2025
-Kódfájlok és elemzések a 2025ös ELTE BTDK dolgozathoz. A data file-ban még . 
-results--az elemzések eredményei adatvizualizációs módszerekkel 
-src-- a  
-/paper-- a 
+Kódfájlok és elemzések a 2025ös ELTE BTDK dolgozathoz.
 
 | Mappa | Leírás |
 |---|---|
